@@ -1,0 +1,46 @@
+{
+    "gpu": {
+        "use": true,
+        "id": 0
+    },
+
+    "model": "GatedGCN",
+    "dataset": "OGBG-MOLTOX21",
+
+    "out_dir": "out/GatedGCN_MOLTOX21_MAP/",
+
+    "params": {
+        "seed": 41,
+        "epochs": 1000,
+        "batch_size": 32,
+        "init_lr": 0.001,
+        "lr_reduce_factor": 0.14,
+        "lr_schedule_patience": 22,
+        "min_lr": 1e-5,
+        "weight_decay": 5e-06,
+        "print_epoch_interval": 1,
+        "max_time": 48
+    },
+
+    "net_params": {
+        "L": 8,
+        "hidden_dim": 150,
+        "out_dim": 150,
+        "residual": true,
+        "edge_feat": true,
+        "readout": "mean",
+        "in_feat_dropout": 0.07,
+        "dropout": 0.21,
+        "batch_norm": true,
+        "pos_enc_dim": 3,
+        "pe_init": "map",
+        "use_lapeig_loss": false,
+        "alpha_loss": 1e-3,
+        "lambda_loss": 100,
+
+        "sign_inv_net": "masked_gin",
+        "sign_inv_layers": 8,
+        "phi_out_dim": 150,
+        "sign_inv_activation": "relu"
+    }
+}
