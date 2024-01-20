@@ -34,7 +34,7 @@ def set_seed(seed: int) -> None:
     torch.cuda.manual_seed(seed)
 
 
-@functional_transform('map')
+@functional_transform('MAP')
 class MAP(BaseTransform):
     """
     Apply Maximal Axis Projection to the node features.
